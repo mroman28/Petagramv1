@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:titleTextColor="@color/textoTitulo"
+   >
+
+
+    <item
+
+        android:id="@+id/mContacto"
+        android:orderInCategory="100"
+        app:itemTextColor="@color/textoTitulo"
+        android:title="Contacto"
+        />
+    <item
+        android:id="@+id/mAcercaDe"
+        android:orderInCategory="101"
+        app:itemTextColor="@color/textoTitulo"
+        android:title="Acerca de" />
+
+</menu>

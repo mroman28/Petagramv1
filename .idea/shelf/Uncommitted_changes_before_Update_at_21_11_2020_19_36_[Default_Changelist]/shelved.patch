@@ -1,0 +1,1081 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.example.petagram\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.Petagram\">\r\n        <activity android:name=\".Favoritos\"\r\n            android:parentActivityName=\".MainActivity\">\r\n            <!-- Soporte para versiones anteriores a Android 4.0 -->\r\n            <meta-data android:name=\"android.support.PARENT_ACTIVITY\"\r\n                android:value=\".MainActivity\">\r\n            </meta-data>\r\n        </activity>\r\n        <activity android:name=\".MainActivity\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision 5e7bc6a5c81d3f6258988c34dae409504a121cd6)
++++ app/src/main/AndroidManifest.xml	(date 1606007620632)
+@@ -8,13 +8,31 @@
+         android:label="@string/app_name"
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+-        android:theme="@style/Theme.Petagram">
++        android:theme="@style/Theme.Petagram"
++        >
+         <activity android:name=".Favoritos"
+             android:parentActivityName=".MainActivity">
+             <!-- Soporte para versiones anteriores a Android 4.0 -->
+             <meta-data android:name="android.support.PARENT_ACTIVITY"
+                 android:value=".MainActivity">
+             </meta-data>
++        </activity>
++        <activity android:name=".AcercaDe"
++            android:label="@string/menu_acerca_de"
++            android:parentActivityName=".MainActivity">
++            <!-- Soporte para versiones 4.0 o menores -->
++            <meta-data
++                android:name="android.support.PARENT_ACTIVITY"
++                android:value=".MainActivity" />
++        </activity>
++        <activity
++            android:name=".Contacto"
++            android:label="@string/menu_contacto"
++            android:parentActivityName=".MainActivity">
++            <!-- Soporte para versiones 4.0 o menores -->
++            <meta-data
++                android:name="android.support.PARENT_ACTIVITY"
++                android:value=".MainActivity" />
+         </activity>
+         <activity android:name=".MainActivity">
+             <intent-filter>
+Index: app/src/main/res/menu/menu_opciones.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/menu/menu_opciones.xml	(date 1606008956703)
++++ app/src/main/res/menu/menu_opciones.xml	(date 1606008956703)
+@@ -0,0 +1,21 @@
++<?xml version="1.0" encoding="utf-8"?>
++<menu xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    app:titleTextColor="@color/textoTitulo"
++   >
++
++
++    <item
++
++        android:id="@+id/mContacto"
++        android:orderInCategory="100"
++        app:itemTextColor="@color/textoTitulo"
++        android:title="Contacto"
++        />
++    <item
++        android:id="@+id/mAcercaDe"
++        android:orderInCategory="101"
++        app:itemTextColor="@color/textoTitulo"
++        android:title="Acerca de" />
++
++</menu>
+\ No newline at end of file
+Index: app/src/main/res/layout/actionbar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.appcompat.widget.Toolbar\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"?attr/actionBarSize\"\r\n    android:background=\"@color/colorPrimary\"\r\n    android:elevation=\"@dimen/elevacion_actinbar\"\r\n     app:popupTheme=\"@style/ThemeOverlay.AppCompat.Light\"\r\n    >\r\n       <!-- <TextView\r\n            android:id=\"@+id/toolbar_title\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Pentagram\"\r\n            android:layout_gravity=\"center\"\r\n            android:textStyle=\"normal\"\r\n            android:textSize=\"18dp\"\r\n            /> -->\r\n        <ImageButton\r\n            android:id=\"@+id/btnestrella\"\r\n            android:layout_width=\"40dp\"\r\n            android:layout_height=\"40dp\"\r\n            android:background=\"@drawable/estrella\"\r\n            android:layout_gravity=\"right\"\r\n            android:onClick=\"irfavoritos\"\r\n            />\r\n        <ImageButton\r\n            android:id=\"@+id/btnIconDog\"\r\n            android:layout_width=\"30dp\"\r\n            android:layout_height=\"30dp\"\r\n            android:background=\"@drawable/animal_paw_print\"\r\n            android:layout_marginLeft=\"0dp\"\r\n            android:layout_gravity=\"left\"\r\n            />\r\n\r\n\r\n\r\n</androidx.appcompat.widget.Toolbar>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/actionbar.xml	(revision 5e7bc6a5c81d3f6258988c34dae409504a121cd6)
++++ app/src/main/res/layout/actionbar.xml	(date 1606008584653)
+@@ -5,8 +5,10 @@
+     android:layout_width="match_parent"
+     android:layout_height="?attr/actionBarSize"
+     android:background="@color/colorPrimary"
++    android:theme="@style/ThemeOverlay.AppCompat.DayNight"
++    app:titleTextColor="@color/textoTitulo"
+     android:elevation="@dimen/elevacion_actinbar"
+-     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
++
+     >
+        <!-- <TextView
+             android:id="@+id/toolbar_title"
+Index: app/src/main/res/layout/fragmentpet.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragmentpet.xml	(date 1605789659322)
++++ app/src/main/res/layout/fragmentpet.xml	(date 1605789659322)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    android:orientation="vertical"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++    <androidx.recyclerview.widget.RecyclerView
++        android:id="@+id/rvPet"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:layout_centerHorizontal="true"
++        android:layout_below="@id/miActionBar"
++        >
++    </androidx.recyclerview.widget.RecyclerView>
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/acerca_de.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/acerca_de.xml	(date 1605711859713)
++++ app/src/main/res/layout/acerca_de.xml	(date 1605711859713)
+@@ -0,0 +1,52 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++    <include
++        android:id="@+id/miActionBar"
++        layout="@layout/actionbar">
++    </include>
++
++    <LinearLayout
++        android:layout_below="@id/miActionBar"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:gravity="center_vertical"
++        android:orientation="vertical">
++
++        <ImageView
++            android:id="@+id/ivPetagram"
++            android:layout_width="@dimen/tamanio_logo"
++            android:layout_height="@dimen/tamanio_logo"
++            android:src="@drawable/animal_paw_print"
++            android:layout_gravity="center_horizontal"
++            />
++
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_margin="@dimen/vertical_margin"
++            android:text="@string/app_version"
++            android:textAlignment="center"
++            />
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:text="@string/dominio"
++            android:textAlignment="center"/>
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:text="@string/derechos"
++            android:textAlignment="center"/>
++        <TextView
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:text="@string/app_descripcion"
++            android:layout_margin="@dimen/vertical_margin"
++            android:textAlignment="center"/>
++    </LinearLayout>
++
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".MainActivity\">\r\n\r\n    <include android:id=\"@+id/miActionBar\"\r\n        layout=\"@layout/actionbar\">\r\n    </include>\r\n\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:id=\"@+id/rvPet\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_centerHorizontal=\"true\"\r\n        android:layout_below=\"@id/miActionBar\"\r\n        >\r\n\r\n\r\n\r\n </androidx.recyclerview.widget.RecyclerView>\r\n\r\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_main.xml	(revision 5e7bc6a5c81d3f6258988c34dae409504a121cd6)
++++ app/src/main/res/layout/activity_main.xml	(date 1606008825599)
+@@ -1,24 +1,44 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<androidx.coordinatorlayout.widget.CoordinatorLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".MainActivity">
++    tools:context=".MainActivity"
++    app:titleTextColor="@color/textoTitulo">
++
+ 
+-    <include android:id="@+id/miActionBar"
+-        layout="@layout/actionbar">
+-    </include>
+ 
+-    <androidx.recyclerview.widget.RecyclerView
+-        android:id="@+id/rvPet"
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:layout_centerHorizontal="true"
+-        android:layout_below="@id/miActionBar"
+-        >
+-
++     <com.google.android.material.appbar.AppBarLayout
++         android:layout_width="match_parent"
++         android:layout_height="wrap_content"
++         app:titleTextColor="@color/textoTitulo"
++         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
++
++          <androidx.appcompat.widget.Toolbar
++             android:id="@+id/toolbar"
++             android:layout_width="match_parent"
++             android:layout_height="wrap_content"
++             app:layout_scrollFlags="scroll|enterAlways">
++
++          </androidx.appcompat.widget.Toolbar>
++
++           <com.google.android.material.tabs.TabLayout
++                android:id="@+id/tabLayout"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++               android:background="@color/colorAccent"
++               >
++
++           </com.google.android.material.tabs.TabLayout>
++        </com.google.android.material.appbar.AppBarLayout>
++        <androidx.viewpager.widget.ViewPager
++            android:id="@+id/viewPager"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+ 
+-
+- </androidx.recyclerview.widget.RecyclerView>
++        </androidx.viewpager.widget.ViewPager>
+ 
+-</RelativeLayout>
+\ No newline at end of file
++</androidx.coordinatorlayout.widget.CoordinatorLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/petagram/AcercaDe.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/petagram/AcercaDe.java	(date 1605713415752)
++++ app/src/main/java/com/example/petagram/AcercaDe.java	(date 1605713415752)
+@@ -0,0 +1,21 @@
++package com.example.petagram;
++
++import android.os.Bundle;
++import androidx.appcompat.widget.Toolbar;
++
++import androidx.annotation.Nullable;
++import androidx.appcompat.app.AppCompatActivity;
++
++public class AcercaDe extends AppCompatActivity {
++
++    @Override
++    public void onCreate(@Nullable Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.acerca_de);
++
++        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
++        setSupportActionBar(miActionBar);
++
++        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
++    }
++}
+Index: app/src/main/res/layout/contacto.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/contacto.xml	(date 1605916258855)
++++ app/src/main/res/layout/contacto.xml	(date 1605916258855)
+@@ -0,0 +1,95 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    >
++
++    <include
++        android:id="@+id/miActionBar"
++        layout="@layout/actionbar">
++    </include>
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:layout_below="@+id/miActionBar"
++        android:orientation="vertical"
++        android:layout_margin="@dimen/vertical_margin">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="horizontal">
++            <ImageView
++                android:id="@+id/ivPetagram"
++                android:layout_width="@dimen/tamanio_logo"
++                android:layout_height="@dimen/tamanio_logo"
++                android:src="@drawable/animal_paw_print"
++                />
++            <LinearLayout
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:orientation="vertical">
++                <TextView
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:text="@string/msj_contacto_2"
++                    android:layout_marginHorizontal="@dimen/horizontal_margin"
++                    />
++                <TextView
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:text="@string/msj_contacto_1"
++                    android:layout_marginTop="5dp"
++                    android:layout_marginHorizontal="@dimen/horizontal_margin"
++                    />
++            </LinearLayout>
++        </LinearLayout>
++        <com.google.android.material.textfield.TextInputEditText
++            android:id="@+id/inputNombreCompleto"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textSize="@dimen/tamanio_texto"
++            android:inputType="textPersonName"
++            android:singleLine="true"
++            android:textColor="@color/textoInput"
++            android:hint="@string/hint_input_nombre_completo"
++            >
++
++        </com.google.android.material.textfield.TextInputEditText>
++
++        <com.google.android.material.textfield.TextInputEditText
++            android:id="@+id/inputCorreoElectronico"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textSize="@dimen/tamanio_texto"
++            android:inputType="textEmailAddress"
++            android:singleLine="true"
++            android:textColor="@color/textoInput"
++            android:hint="@string/hint_input_correo_electronico">
++
++        </com.google.android.material.textfield.TextInputEditText>
++        <com.google.android.material.textfield.TextInputEditText
++            android:id="@+id/inputDescripcion"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textSize="@dimen/tamanio_texto"
++            android:inputType="textMultiLine"
++            android:textColor="@color/textoInput"
++            android:hint="@string/hint_input_mensaje">
++
++        </com.google.android.material.textfield.TextInputEditText>
++        <Button
++            android:id="@+id/btnEnviar"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_marginTop="@dimen/vertical_margin"
++            android:textColor="@color/colorBlanco"
++            android:theme="@style/Boton"
++            android:text="@string/label_btn_enviar"
++            android:onClick="enviarMensaje"
++            />
++    </LinearLayout>
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/petagram/PerfilFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/petagram/PerfilFragment.java	(date 1605826430511)
++++ app/src/main/java/com/example/petagram/PerfilFragment.java	(date 1605826430511)
+@@ -0,0 +1,62 @@
++package com.example.petagram;
++
++import android.os.Bundle;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
++import androidx.fragment.app.Fragment;
++import androidx.recyclerview.widget.LinearLayoutManager;
++import androidx.recyclerview.widget.RecyclerView;
++import androidx.recyclerview.widget.GridLayoutManager;
++
++import java.util.ArrayList;
++
++public class PerfilFragment extends Fragment {
++    ArrayList<Pet> pets;
++    private RecyclerView listaPets;
++
++    public PerfilFragment() {
++        // Required empty public constructor
++    }
++
++    @Nullable
++    @Override
++    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
++       // return super.onCreateView(inflater, container, savedInstanceState);
++        View v = inflater.inflate(R.layout.fragment_perfil, container, false);
++
++        listaPets = (RecyclerView) v.findViewById(R.id.rvPerfilPet);
++        GridLayoutManager glm = new GridLayoutManager(getActivity(),3);
++        listaPets.setLayoutManager(glm);
++
++        inicializarListaMascotas();
++        inicializarAdaptador();
++
++        return v;
++    }
++
++    public void inicializarAdaptador(){
++        PetAdaptador adaptador = new PetAdaptador(pets);
++        listaPets.setAdapter(adaptador);
++    }
++
++    public void inicializarListaMascotas(){
++        pets = new ArrayList<Pet>();
++
++        pets.add(new Pet(R.drawable.perro1,"Toby", "2"));
++        pets.add(new Pet(R.drawable.perro1,"Toby", "3"));
++        pets.add(new Pet(R.drawable.perro1,"Toby", "5"));
++        pets.add(new Pet(R.drawable.perro1,"Toby", "1"));
++        pets.add(new Pet(R.drawable.perro1,"Toby", "6"));
++        pets.add(new Pet(R.drawable.perro1,"Toby", "2"));
++        pets.add(new Pet(R.drawable.perro1,"Toby","3"));
++        pets.add(new Pet(R.drawable.perro1,"Toby", "5"));
++
++
++
++
++    }
++}
+Index: app/src/main/res/layout/fragment_perfil.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_perfil.xml	(date 1605898902024)
++++ app/src/main/res/layout/fragment_perfil.xml	(date 1605898902024)
+@@ -0,0 +1,42 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:orientation="vertical"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++    <com.mikhaellopez.circularimageview.CircularImageView
++        android:layout_width="200dp"
++        android:layout_height="200dp"
++        android:layout_gravity="center"
++        android:src="@drawable/perro1"
++        app:civ_border_color="@color/colorAccent"
++        app:civ_border_width="3dp"
++        app:civ_shadow="true"
++        app:civ_shadow_radius="10dp"
++        app:civ_shadow_color="@color/colorPrimaryDark"/>
++
++    <TextView
++        android:id="@+id/tvNombrePerfilMascota"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="Toby"
++        android:textSize="@dimen/tamanio_texto"
++        android:textStyle="bold"
++        android:gravity="center_horizontal"
++
++
++        />
++
++         <androidx.recyclerview.widget.RecyclerView
++             android:id="@+id/rvPerfilPet"
++             android:layout_width="match_parent"
++             android:layout_height="wrap_content"
++             android:padding="10dp">
++
++         </androidx.recyclerview.widget.RecyclerView>
++
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/petagram/Contacto.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/petagram/Contacto.java	(date 1605916320348)
++++ app/src/main/java/com/example/petagram/Contacto.java	(date 1605916320348)
+@@ -0,0 +1,40 @@
++package com.example.petagram;
++
++import android.os.Bundle;
++import android.view.View;
++
++import androidx.annotation.Nullable;
++import androidx.appcompat.app.AppCompatActivity;
++import androidx.appcompat.widget.Toolbar;
++
++import com.google.android.material.textfield.TextInputEditText;
++
++public class Contacto extends AppCompatActivity {
++    private TextInputEditText nombreCompleto;
++    private TextInputEditText correoElectronico;
++    private TextInputEditText mensaje;
++
++    @Override
++    protected void onCreate(@Nullable Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.contacto);
++        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
++        setSupportActionBar(miActionBar);
++
++        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
++
++        nombreCompleto = (TextInputEditText) findViewById(R.id.inputNombreCompleto);
++        correoElectronico = (TextInputEditText) findViewById(R.id.inputCorreoElectronico);
++        mensaje = (TextInputEditText) findViewById(R.id.inputDescripcion);
++    }
++
++    public void enviarMensaje(View view) {
++
++        String titulo = "Mensaje para Petagram";
++        String correo = correoElectronico.getText().toString().trim();
++        String msj = nombreCompleto.getText().toString().trim() + " " + mensaje.getText().toString().trim();
++
++        EnviarMail enviar = new EnviarMail(this, correo, titulo, msj);
++        enviar.execute();
++    }
++}
+Index: app/src/main/java/com/example/petagram/EnviarMail.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/petagram/EnviarMail.java	(date 1605714203507)
++++ app/src/main/java/com/example/petagram/EnviarMail.java	(date 1605714203507)
+@@ -0,0 +1,77 @@
++package com.example.petagram;
++
++import android.app.ProgressDialog;
++import android.content.Context;
++import android.os.AsyncTask;
++import android.widget.Toast;
++
++import java.util.Properties;
++
++import javax.mail.Message;
++import javax.mail.MessagingException;
++import javax.mail.PasswordAuthentication;
++import javax.mail.Session;
++import javax.mail.Transport;
++import javax.mail.internet.InternetAddress;
++import javax.mail.internet.MimeMessage;
++
++
++public class EnviarMail extends AsyncTask<Void,Void,Void>{
++
++
++    private Context context;
++    private Session session;
++
++    private String email;
++    private String subject;
++    private String message;
++
++    private ProgressDialog progressDialog;
++
++    public EnviarMail(Context context, String email, String subject, String message){
++        this.context = context;
++        this.email = email;
++        this.subject = subject;
++        this.message = message;
++    }
++    @Override
++    protected void onPreExecute() {
++        super.onPreExecute();
++        progressDialog = ProgressDialog.show(context,"Enviando mensaje","Espere un momento...",false,false);
++    }
++    @Override
++    protected void onPostExecute(Void aVoid) {
++        super.onPostExecute(aVoid);
++        progressDialog.dismiss();
++        Toast.makeText(context,"Su mensaje se ha enviado.",Toast.LENGTH_LONG).show();
++    }
++    @Override
++    protected Void doInBackground(Void... params) {
++
++        Properties props = new Properties();
++        props.put("mail.smtp.host", "smtp.gmail.com");
++        props.put("mail.smtp.socketFactory.port", "465");
++        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
++        props.put("mail.smtp.auth", "true");
++        props.put("mail.smtp.port", "465");
++
++        session = Session.getDefaultInstance(props,
++                new javax.mail.Authenticator() {
++                    protected PasswordAuthentication getPasswordAuthentication() {
++                        return new PasswordAuthentication(ConfigurarMail.EMAIL, ConfigurarMail.PASSWORD);
++                    }
++                });
++        try {
++
++            MimeMessage mm = new MimeMessage(session);
++            mm.setFrom(new InternetAddress(email));
++            mm.addRecipient(Message.RecipientType.TO, new InternetAddress(ConfigurarMail.EMAIL));
++            mm.setSubject(subject);
++            mm.setText(message);
++            Transport.send(mm);
++        } catch (MessagingException e) {
++            e.printStackTrace();
++        }
++        return null;
++    }
++}
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">Petagram</string>\r\n    <string name=\"countLikes\">5</string>\r\n    <string name=\"txtPet\">Pentagram</string>\r\n    <string name=\"txtFavoritos\">Favoritos</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(revision 5e7bc6a5c81d3f6258988c34dae409504a121cd6)
++++ app/src/main/res/values/strings.xml	(date 1605899299797)
+@@ -3,4 +3,18 @@
+     <string name="countLikes">5</string>
+     <string name="txtPet">Pentagram</string>
+     <string name="txtFavoritos">Favoritos</string>
++    <string name="menu_contacto">Contacto</string>
++    <string name="menu_acerca_de">Acerca De</string>
++    <string name="app_version">Versión 1.0</string>
++    <string name="app_descripcion">Petagram es una aplicación para los que gustan los cachorros.</string>
++    <string name="dominio">petagram.mroman.com</string>
++    <string name="derechos">© 2020 mroman Co.</string>
++    <string name="msj_contacto_1">Completa el siguiente formulario y envíanos un mensaje.</string>
++    <string name="msj_contacto_2">Tus comentarios, preguntas y sugerencias son importantes para nosotros.</string>
++
++    <string name="hint_input_nombre_completo">Nombre completo</string>
++    <string name="hint_input_correo_electronico">Correo electrónico</string>
++    <string name="hint_input_mensaje">Mensaje</string>
++
++    <string name="label_btn_enviar">Enviar mensaje</string>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/petagram/ConfigurarMail.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/petagram/ConfigurarMail.java	(date 1605723177696)
++++ app/src/main/java/com/example/petagram/ConfigurarMail.java	(date 1605723177696)
+@@ -0,0 +1,11 @@
++package com.example.petagram;
++
++public class ConfigurarMail {
++
++    //Se requiere configurar las credenciales del correo a utilizar
++    //La configuración es para una cuenta de correo en GMAIL
++
++    public static final String EMAIL ="tucuentacorreo@gmail.com";
++    public static final String PASSWORD ="passwordDeTuCuentaDeCorreo";
++}
++
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources xmlns:tools=\"http://schemas.android.com/tools\">\r\n    <!-- Base application theme. -->\r\n    <style name=\"Theme.Petagram\" parent=\"Theme.MaterialComponents.DayNight.NoActionBar\">\r\n        <!-- Primary brand color. -->\r\n        <item name=\"colorPrimary\">@color/colorPrimary</item>\r\n        <item name=\"colorPrimaryVariant\">@color/colorPrimaryDark</item>\r\n        <item name=\"colorOnPrimary\">@color/colorPrimary</item>\r\n\r\n        <!-- Status bar color. -->\r\n        <item name=\"android:statusBarColor\" tools:targetApi=\"l\">?attr/colorPrimaryVariant</item>\r\n        <!-- Customize your theme here. -->\r\n    </style>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/themes.xml	(revision 5e7bc6a5c81d3f6258988c34dae409504a121cd6)
++++ app/src/main/res/values/themes.xml	(date 1606008218700)
+@@ -1,11 +1,13 @@
+-<resources xmlns:tools="http://schemas.android.com/tools">
++<resources
++    xmlns:tools="http://schemas.android.com/tools">
+     <!-- Base application theme. -->
+-    <style name="Theme.Petagram" parent="Theme.MaterialComponents.DayNight.NoActionBar">
++    <style name="Theme.Petagram" parent="Theme.MaterialComponents.Light.NoActionBar">
+         <!-- Primary brand color. -->
+         <item name="colorPrimary">@color/colorPrimary</item>
+         <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+         <item name="colorOnPrimary">@color/colorPrimary</item>
+ 
++
+         <!-- Status bar color. -->
+         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+         <!-- Customize your theme here. -->
+Index: app/src/main/res/values/styles.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <style name=\"AppTheme\" parent=\"Theme.AppCompat.Light.NoActionBar\">\r\n    <item name=\"colorPrimary\">@color/colorPrimary</item>\r\n    <item name=\"colorPrimaryDark\">@color/colorPrimaryDark</item>\r\n    <item name=\"colorAccent\">@color/colorAccent</item>\r\n    </style>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/styles.xml	(revision 5e7bc6a5c81d3f6258988c34dae409504a121cd6)
++++ app/src/main/res/values/styles.xml	(date 1606007855746)
+@@ -1,8 +1,20 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
+     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
++
+     <item name="colorPrimary">@color/colorPrimary</item>
+     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+     <item name="colorAccent">@color/colorAccent</item>
++
+     </style>
++    <style name="HintText" parent="TextAppearance.Design.Hint">
++        <item name="android:textSize">16sp</item>
++        <item name="android:textColor">@color/colorPrimaryDark</item>
++    </style>
++
++    <style name="Boton" parent="Theme.AppCompat.Light">
++        <item name="android:colorButtonNormal">@color/colorAccent</item>
++        <item name="android:colorControlHighlight">@color/colorPrimary</item>
++    </style>
++
+ </resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/petagram/Favoritos.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.petagram;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.appcompat.widget.Toolbar;\r\nimport androidx.recyclerview.widget.LinearLayoutManager;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.ImageButton;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class Favoritos extends AppCompatActivity {\r\n    private RecyclerView listPets;\r\n    ArrayList<Pet> pets;\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_favoritos);\r\n        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);\r\n\r\n        ImageButton btnestrella = (ImageButton) findViewById(R.id.btnestrella);\r\n        btnestrella.setVisibility(View.GONE);\r\n\r\n        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);\r\n        setSupportActionBar(miActionBar);\r\n        getSupportActionBar().setDisplayHomeAsUpEnabled(true);\r\n\r\n        //android:id=\"@+id/toolbar_title\"\r\n\r\n\r\n        listPets = (RecyclerView) findViewById(R.id.FavoritoRV);\r\n\r\n        LinearLayoutManager llm = new LinearLayoutManager(this);\r\n        llm.setOrientation(LinearLayoutManager.VERTICAL);\r\n\r\n        listPets.setLayoutManager(llm);\r\n\r\n        initMascotas();\r\n        inicilizarAdaptador();\r\n    }\r\n    private void inicilizarAdaptador(){\r\n        PetAdaptador  adaptador = new PetAdaptador(pets,this);\r\n        listPets.setAdapter(adaptador);\r\n    }\r\n\r\n    public void initMascotas(){\r\n        pets = new ArrayList<Pet>();\r\n\r\n        pets.add(new Pet(R.drawable.perro1,\"Toby\", \"2\"));\r\n        pets.add(new Pet(R.drawable.perro3,\"Firulay\", \"5\"));\r\n        pets.add(new Pet(R.drawable.perro5,\"Rambo\", \"6\"));\r\n        pets.add(new Pet(R.drawable.perro7,\"Ranger\", \"3\"));\r\n        pets.add(new Pet(R.drawable.perro8,\"Bonny\", \"5\"));\r\n\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/petagram/Favoritos.java	(revision 5e7bc6a5c81d3f6258988c34dae409504a121cd6)
++++ app/src/main/java/com/example/petagram/Favoritos.java	(date 1605723482960)
+@@ -29,8 +29,6 @@
+         setSupportActionBar(miActionBar);
+         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+ 
+-        //android:id="@+id/toolbar_title"
+-
+ 
+         listPets = (RecyclerView) findViewById(R.id.FavoritoRV);
+ 
+Index: app/src/main/java/com/example/petagram/PetFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/petagram/PetFragment.java	(date 1605824014613)
++++ app/src/main/java/com/example/petagram/PetFragment.java	(date 1605824014613)
+@@ -0,0 +1,55 @@
++package com.example.petagram;
++
++import android.os.Bundle;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++import androidx.annotation.NonNull;
++import androidx.annotation.Nullable;
++import androidx.fragment.app.Fragment;
++import androidx.recyclerview.widget.LinearLayoutManager;
++import androidx.recyclerview.widget.RecyclerView;
++
++import java.util.ArrayList;
++
++public class PetFragment extends Fragment {
++
++    ArrayList<Pet> pets;
++    private RecyclerView listaPets;
++
++    @Nullable
++    @Override
++    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
++        //return super.onCreateView(inflater, container, savedInstanceState);
++      View v = inflater.inflate(R.layout.fragmentpet, container,false);
++        listaPets = (RecyclerView) v.findViewById(R.id.rvPet);
++        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
++        llm.setOrientation(LinearLayoutManager.VERTICAL);
++
++        listaPets.setLayoutManager(llm);
++        inicializarListaPets();
++        inicializarAdaptador();
++
++        return v;
++    }
++
++    public void inicializarAdaptador(){
++        PetAdaptador adaptador = new PetAdaptador(pets);
++        listaPets.setAdapter(adaptador);
++    }
++
++    public void inicializarListaPets(){
++        pets = new ArrayList<Pet>();
++
++        pets.add(new Pet(R.drawable.perro1,"Toby", "2"));
++        pets.add(new Pet(R.drawable.perro2,"Tano", "3"));
++        pets.add(new Pet(R.drawable.perro3,"Firulay", "5"));
++        pets.add(new Pet(R.drawable.perro4,"Roky", "1"));
++        pets.add(new Pet(R.drawable.perro5,"Rambo", "6"));
++        pets.add(new Pet(R.drawable.perro6,"Doky", "2"));
++        pets.add(new Pet(R.drawable.perro7,"Ranger","3"));
++        pets.add(new Pet(R.drawable.perro8,"Bonny", "5"));
++
++    }
++}
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"colorPrimary\">#FFEB3B</color>\r\n    <color name=\"colorPrimaryDark\">#FBC02D</color>\r\n    <color name=\"colorAccent\">#FFC107</color>\r\n\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/colors.xml	(revision 5e7bc6a5c81d3f6258988c34dae409504a121cd6)
++++ app/src/main/res/values/colors.xml	(date 1605916014696)
+@@ -3,5 +3,10 @@
+     <color name="colorPrimary">#FFEB3B</color>
+     <color name="colorPrimaryDark">#FBC02D</color>
+     <color name="colorAccent">#FFC107</color>
++    android:textColor="@color/colorBlanco"
++    <color name="textoInput">#4d4d4d</color>
++    <color name="textoTitulo">#4d4d4d</color>
++    <color name="colorBlanco">#4d4d4d</color>
++
+ 
+ </resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/petagram/PageAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/petagram/PageAdapter.java	(date 1605822818852)
++++ app/src/main/java/com/example/petagram/PageAdapter.java	(date 1605822818852)
+@@ -0,0 +1,27 @@
++package com.example.petagram;
++
++import androidx.annotation.NonNull;
++import androidx.fragment.app.Fragment;
++import androidx.fragment.app.FragmentManager;
++import androidx.fragment.app.FragmentPagerAdapter;
++
++import java.util.ArrayList;
++
++public class PageAdapter extends FragmentPagerAdapter {
++    private  ArrayList<Fragment> fragments;
++    public PageAdapter(@NonNull FragmentManager fm, ArrayList<Fragment> fragments) {
++        super(fm);
++        this.fragments=fragments;
++    }
++
++    @NonNull
++    @Override
++    public Fragment getItem(int position) {
++        return fragments.get(position) ;
++    }
++
++    @Override
++    public int getCount() {
++        return fragments.size();
++    }
++}
+Index: app/src/main/res/values/dimens.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <dimen name=\"activity_horizontal_margin\">16dp</dimen>\r\n    <dimen name=\"activity_vertical_margin\">16dp</dimen>\r\n    <dimen name=\"top\">20dp</dimen>\r\n    <dimen name=\"left\">10dp</dimen>\r\n    <dimen name=\"elevacion_actinbar\">4dp</dimen>\r\n    <dimen name=\"corner_radius_cardview\">4dp</dimen>\r\n    <dimen name=\"nombre_cardview\">20dp</dimen>\r\n    <dimen name=\"elevacion_actionbar\">4dp</dimen>\r\n\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/dimens.xml	(revision 5e7bc6a5c81d3f6258988c34dae409504a121cd6)
++++ app/src/main/res/values/dimens.xml	(date 1605711728033)
+@@ -8,5 +8,10 @@
+     <dimen name="corner_radius_cardview">4dp</dimen>
+     <dimen name="nombre_cardview">20dp</dimen>
+     <dimen name="elevacion_actionbar">4dp</dimen>
++    <dimen name="tamanio_texto">15sp</dimen>
++    <dimen name="tamanio_logo">100dp</dimen>
++    <dimen name="vertical_margin">15dp</dimen>
++    <dimen name="horizontal_margin">15dp</dimen>
++
+ 
+-</resources>
+\ No newline at end of file
++    </resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/petagram/PetAdaptador.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.petagram;\r\n\r\nimport android.app.Activity;\r\nimport android.content.Intent;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.ImageButton;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\nimport androidx.recyclerview.widget.RecyclerView.ViewHolder;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class PetAdaptador  extends RecyclerView.Adapter<PetAdaptador.PetViewHolder>{\r\n    ArrayList<Pet> pets;\r\n    Activity  activity;\r\n    public  PetAdaptador(ArrayList<Pet> pets, Activity activity){\r\n\r\n        this.pets=pets;\r\n        this.activity= activity;\r\n    }\r\n\r\n    // Inflar el layout y lo pasara al viewholder para que obtengas los views\r\n    @NonNull\r\n    @Override\r\n    public PetViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {\r\n        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_pet,parent,false);\r\n        return new PetViewHolder(v);\r\n    }\r\n     // asocia cada elemento de la lista con cada view\r\n    @Override\r\n    public void onBindViewHolder(@NonNull PetViewHolder petViewHolder, int position) {\r\n        final Pet pet = pets.get(position);\r\n        petViewHolder.imgFoto.setImageResource(pet.getFoto());\r\n        petViewHolder.tvNombreCV.setText(pet.getNombre());\r\n        petViewHolder.tvCounterLikes.setText(pet.getNoLike());\r\n        petViewHolder.btnLikePet.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                pet.sumLike();\r\n                Toast.makeText(activity,\"Click like a : \"+pet.getNombre() + \" Cuenta con \"+ pet.getNoLike() + \" Likes\" , Toast.LENGTH_SHORT).show();\r\n                petViewHolder.tvCounterLikes.setText(pet.getNoLike());\r\n            }\r\n        });\r\n\r\n\r\n    }\r\n\r\n\r\n    @Override\r\n    public int getItemCount() {\r\n        return pets.size();\r\n    }\r\n\r\n    public  static  class  PetViewHolder extends RecyclerView.ViewHolder{\r\n            private ImageView imgFoto;\r\n            private TextView tvNombreCV;\r\n            private TextView tvCounterLikes;\r\n            private ImageButton  btnLikePet;\r\n\r\n\r\n           public PetViewHolder(@NonNull View itemView) {\r\n               super(itemView);\r\n               imgFoto=(ImageView) itemView.findViewById(R.id.imgFoto);\r\n               tvNombreCV = (TextView) itemView.findViewById(R.id.tvNombreCV);\r\n               tvCounterLikes =  itemView.findViewById(R.id.tvCounterLikes);\r\n               btnLikePet = (ImageButton) itemView.findViewById(R.id.btnLikePet);\r\n           }\r\n       }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/petagram/PetAdaptador.java	(revision 5e7bc6a5c81d3f6258988c34dae409504a121cd6)
++++ app/src/main/java/com/example/petagram/PetAdaptador.java	(date 1605825379310)
+@@ -22,7 +22,12 @@
+     public  PetAdaptador(ArrayList<Pet> pets, Activity activity){
+ 
+         this.pets=pets;
+-        this.activity= activity;
++      //  this.activity= activity;
++    }
++    public  PetAdaptador(ArrayList<Pet> pets) { // Activity activity){
++
++        this.pets=pets;
++
+     }
+ 
+     // Inflar el layout y lo pasara al viewholder para que obtengas los views
+Index: app/src/main/java/com/example/petagram/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.petagram;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.os.Bundle;\r\n\r\nimport androidx.appcompat.widget.Toolbar;\r\nimport androidx.recyclerview.widget.GridLayoutManager;\r\nimport androidx.recyclerview.widget.LinearLayoutManager;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport android.content.Intent;\r\nimport android.graphics.drawable.GradientDrawable;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.AdapterView;\r\nimport android.widget.ArrayAdapter;\r\nimport android.widget.ListView;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class MainActivity extends AppCompatActivity {\r\n    private RecyclerView listaPets;\r\n    ArrayList<Pet> Pets;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_main);\r\n\r\n\r\n        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar) ;\r\n        setSupportActionBar(miActionBar);\r\n        getSupportActionBar().setDisplayShowTitleEnabled(false);\r\n\r\n        listaPets = (RecyclerView) findViewById(R.id.rvPet);\r\n        LinearLayoutManager llm = new LinearLayoutManager(this);\r\n        llm.setOrientation(LinearLayoutManager.VERTICAL);\r\n       /* GridLayoutManager glm = new GridLayoutManager(this, 2);*/\r\n\r\n        listaPets.setLayoutManager(llm);\r\n        inicializarListaPets();\r\n        incializarAdaptador();\r\n\r\n    }\r\n\r\n\r\n    public PetAdaptador adaptador;\r\n    public void incializarAdaptador(){\r\n\r\n      PetAdaptador adaptador = new PetAdaptador(Pets,this);\r\n        listaPets.setAdapter(adaptador);\r\n    }\r\n    public void inicializarListaPets(){\r\n        Pets = new ArrayList<Pet>();\r\n\r\n        Pets.add(new Pet(R.drawable.perro1,\"Toby\", \"2\"));\r\n        Pets.add(new Pet(R.drawable.perro2,\"Tano\", \"3\"));\r\n        Pets.add(new Pet(R.drawable.perro3,\"Firulay\", \"5\"));\r\n        Pets.add(new Pet(R.drawable.perro4,\"Roky\", \"1\"));\r\n        Pets.add(new Pet(R.drawable.perro5,\"Rambo\", \"6\"));\r\n        Pets.add(new Pet(R.drawable.perro6,\"Doky\", \"2\"));\r\n        Pets.add(new Pet(R.drawable.perro7,\"Ranger\",\"3\"));\r\n        Pets.add(new Pet(R.drawable.perro8,\"Bonny\", \"5\"));\r\n\r\n    }\r\n\r\n    public void irfavoritos(View v){\r\n        Intent intent = new Intent(this, Favoritos.class);\r\n        startActivity(intent);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/petagram/MainActivity.java	(revision 5e7bc6a5c81d3f6258988c34dae409504a121cd6)
++++ app/src/main/java/com/example/petagram/MainActivity.java	(date 1605918287288)
+@@ -1,27 +1,35 @@
+ package com.example.petagram;
+ 
++import androidx.annotation.NonNull;
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+ import android.os.Bundle;
+ 
+ import androidx.appcompat.widget.Toolbar;
++import androidx.fragment.app.Fragment;
+ import androidx.recyclerview.widget.GridLayoutManager;
+ import androidx.recyclerview.widget.LinearLayoutManager;
+ import androidx.recyclerview.widget.RecyclerView;
++import androidx.viewpager.widget.ViewPager;
+ 
+ import android.content.Intent;
+ import android.graphics.drawable.GradientDrawable;
+ import android.os.Bundle;
++import android.view.Menu;
++import android.view.MenuItem;
+ import android.view.View;
+-import android.widget.AdapterView;
+-import android.widget.ArrayAdapter;
+-import android.widget.ListView;
++
++import com.google.android.material.tabs.TabLayout;
+ 
+ import java.util.ArrayList;
+ 
+ public class MainActivity extends AppCompatActivity {
+-    private RecyclerView listaPets;
+-    ArrayList<Pet> Pets;
++    private Toolbar toolbar;
++    private TabLayout tabLayout;
++    private ViewPager viewPager;
++
++
++    private static final int MNU_FAVORITOS=1;
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+@@ -29,44 +37,56 @@
+         setContentView(R.layout.activity_main);
+ 
+ 
+-        Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar) ;
+-        setSupportActionBar(miActionBar);
+-        getSupportActionBar().setDisplayShowTitleEnabled(false);
++        toolbar = (Toolbar) findViewById(R.id.toolbar);
++        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
++        viewPager = (ViewPager) findViewById(R.id.viewPager);
+ 
+-        listaPets = (RecyclerView) findViewById(R.id.rvPet);
+-        LinearLayoutManager llm = new LinearLayoutManager(this);
+-        llm.setOrientation(LinearLayoutManager.VERTICAL);
+-       /* GridLayoutManager glm = new GridLayoutManager(this, 2);*/
++        setUpViewPager();
+ 
+-        listaPets.setLayoutManager(llm);
+-        inicializarListaPets();
+-        incializarAdaptador();
+ 
+-    }
++        if(toolbar != null) {
++            setSupportActionBar(toolbar);
++        }
+ 
++    }
+ 
+-    public PetAdaptador adaptador;
+-    public void incializarAdaptador(){
++    private ArrayList<Fragment>agregarFragments(){
++        ArrayList<Fragment> fragments = new ArrayList<>();
+ 
+-      PetAdaptador adaptador = new PetAdaptador(Pets,this);
+-        listaPets.setAdapter(adaptador);
++        fragments.add(new PetFragment());
++        fragments.add(new PerfilFragment());
++        return fragments;
+     }
+-    public void inicializarListaPets(){
+-        Pets = new ArrayList<Pet>();
+ 
+-        Pets.add(new Pet(R.drawable.perro1,"Toby", "2"));
+-        Pets.add(new Pet(R.drawable.perro2,"Tano", "3"));
+-        Pets.add(new Pet(R.drawable.perro3,"Firulay", "5"));
+-        Pets.add(new Pet(R.drawable.perro4,"Roky", "1"));
+-        Pets.add(new Pet(R.drawable.perro5,"Rambo", "6"));
+-        Pets.add(new Pet(R.drawable.perro6,"Doky", "2"));
+-        Pets.add(new Pet(R.drawable.perro7,"Ranger","3"));
+-        Pets.add(new Pet(R.drawable.perro8,"Bonny", "5"));
++    private void setUpViewPager(){
++        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregarFragments()));
++        tabLayout.setupWithViewPager(viewPager);
++        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home);
++        tabLayout.getTabAt(1).setIcon(R.drawable.ic_perfil);
++    }
+ 
++    @Override
++    public boolean onCreateOptionsMenu(Menu menu) {
++        getMenuInflater().inflate(R.menu.menu_opciones,menu);
++      //  menu.add(Menu.NONE,MNU_FAVORITOS,Menu.NONE,R.string.).setIcon(R.drawable.estrella).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
++        return true;
+     }
+ 
+-    public void irfavoritos(View v){
+-        Intent intent = new Intent(this, Favoritos.class);
+-        startActivity(intent);
++    @Override
++    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
++       Intent intent;
++        switch (item.getItemId()){
++            case R.id.mContacto:
++                intent = new Intent(this, Contacto.class);
++                startActivity(intent);
++                break;
++
++            case R.id.mAcercaDe:
++                intent = new Intent(this, AcercaDe.class);
++                startActivity(intent);
++                break;
++        }
++
++        return super.onOptionsItemSelected(item);
+     }
+ }
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n}\r\n\r\nandroid {\r\n    compileSdkVersion 30\r\n    buildToolsVersion \"30.0.2\"\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.petagram\"\r\n        minSdkVersion 23\r\n        targetSdkVersion 30\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation 'androidx.appcompat:appcompat:1.2.0'\r\n    implementation 'com.google.android.material:material:1.2.1'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'\r\n    testImplementation 'junit:junit:4.+'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.2'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(revision 5e7bc6a5c81d3f6258988c34dae409504a121cd6)
++++ app/build.gradle	(date 1605898619111)
+@@ -36,4 +36,9 @@
+     testImplementation 'junit:junit:4.+'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
++
++      implementation 'com.sun.mail:android-mail:1.5.5'
++    implementation 'com.sun.mail:android-activation:1.5.5'
++    implementation 'com.mikhaellopez:circularimageview:4.2.0'
++
+ }
+\ No newline at end of file

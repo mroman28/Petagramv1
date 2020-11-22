@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    android:theme="@style/ThemeOverlay.AppCompat.DayNight"
+    app:titleTextColor="@color/textoTitulo"
+    android:elevation="@dimen/elevacion_actinbar"
+
+    >
+       <!-- <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pentagram"
+            android:layout_gravity="center"
+            android:textStyle="normal"
+            android:textSize="18dp"
+            /> -->
+        <ImageButton
+            android:id="@+id/btnestrella"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/estrella"
+            android:layout_gravity="right"
+            android:onClick="irfavoritos"
+            />
+        <ImageButton
+            android:id="@+id/btnIconDog"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/animal_paw_print"
+            android:layout_marginLeft="0dp"
+            android:layout_gravity="left"
+            />
+
+
+
+</androidx.appcompat.widget.Toolbar>
+
+
+
+
+
+
+
+
+
+

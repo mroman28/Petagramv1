@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Petagram</string>
+    <string name="countLikes">5</string>
+    <string name="txtPet">Pentagram</string>
+    <string name="txtFavoritos">Favoritos</string>
+    <string name="menu_contacto">Contacto</string>
+    <string name="menu_acerca_de">Acerca De</string>
+    <string name="app_version">Versión 1.0</string>
+    <string name="app_descripcion">Petagram es una aplicación para los que gustan los cachorros.</string>
+    <string name="dominio">petagram.mroman.com</string>
+    <string name="derechos">© 2020 mroman Co.</string>
+    <string name="msj_contacto_1">Completa el siguiente formulario y envíanos un mensaje.</string>
+    <string name="msj_contacto_2">Tus comentarios, preguntas y sugerencias son importantes para nosotros.</string>
+
+    <string name="hint_input_nombre_completo">Nombre completo</string>
+    <string name="hint_input_correo_electronico">Correo electrónico</string>
+    <string name="hint_input_mensaje">Mensaje</string>
+
+    <string name="label_btn_enviar">Enviar mensaje</string>
+</resources>

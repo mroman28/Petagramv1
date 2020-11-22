@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFEB3B</color>
+    <color name="colorPrimaryDark">#FBC02D</color>
+    <color name="colorAccent">#FFC107</color>
+    android:textColor="@color/colorBlanco"
+    <color name="textoInput">#4d4d4d</color>
+    <color name="textoTitulo">#4d4d4d</color>
+    <color name="colorBlanco">#4d4d4d</color>
+
+
+</resources>
